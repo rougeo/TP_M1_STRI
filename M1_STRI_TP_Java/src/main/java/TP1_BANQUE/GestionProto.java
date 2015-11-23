@@ -13,7 +13,7 @@ public class GestionProto {
     private BanqueSimple banque;
     
     public GestionProto(){
-        new BanqueSimple();
+        banque=new BanqueSimple();
     }
     
     
