@@ -10,13 +10,18 @@ package TP1_BANQUE;
  * @author BoubacarSidy
  */
 public class GestionProto {
+    private BanqueSimple banque;
+    
+    public GestionProto(){
+        new BanqueSimple();
+    }
     
     
-    public String CheckReq(String requete)
-    { String chaine;
-    
-    
-        return chaine;
+    public String traitement(String requete)
+    { String chaine[];
+      chaine=requete.split(" ");
+         
+        return requete;
     }
     
 }
