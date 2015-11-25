@@ -19,7 +19,9 @@ public class GestionProto {
     
     public String traitement(String requete)
     { String chaine[];
+      String 
       chaine=requete.split(" ");
+        
          
         return requete;
     }
