@@ -19,11 +19,33 @@ public class GestionProto {
     
     public String traitement(String requete)
     { String chaine[];
-      String 
+      String reponse;
       chaine=requete.split(" ");
-        
-         
-        return requete;
+      if(chaine[1].compareTo("CREATION")==0)
+      {
+          
+      }
+      else
+          if(chaine[1].compareTo("POSITION")==0)
+      {
+          
+      }
+      else
+          if(chaine[1].compareTo("AJOUT")==0)
+      {
+          
+      }
+      else
+          if(chaine[1].compareTo("RETRAIT")==0)
+      {
+          
+      }
+      else
+              reponse="ERREUR REQUETE INCORRECTE";
+      
+      
+                  
+        return reponse;
     }
     
 }
