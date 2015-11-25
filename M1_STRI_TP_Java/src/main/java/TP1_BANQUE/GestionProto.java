@@ -5,6 +5,7 @@
  */
 package TP1_BANQUE;
 
+import java.util.*;
 /**
  *
  * @author BoubacarSidy
@@ -19,33 +20,50 @@ public class GestionProto {
     
     public String traitement(String requete)
     { String chaine[];
-      String reponse;
+      String reponse="ERREUR REQUETE INCORRECTE";
+      double solde;
+      
       chaine=requete.split(" ");
-      if(chaine[1].compareTo("CREATION")==0)
-      {
-          
-      }
-      else
-          if(chaine[1].compareTo("POSITION")==0)
-      {
-          
-      }
-      else
-          if(chaine[1].compareTo("AJOUT")==0)
-      {
-          
-      }
-      else
-          if(chaine[1].compareTo("RETRAIT")==0)
-      {
-          
-      }
-      else
+      
+       switch (chaine[0]) {
+            case "CREATION": 
+               if(chaine.length==3)
+               {
+                   solde=Double.parseDouble(chaine[2]);
+                   banque.creerCompte(chaine[1], solde);
+            
+                   
+               }
+              
+                     break;
+            case "POSITION":
+               if(chaine.length==2)
+               {
+                   
+               }
+                break;
+            case "AJOUT":
+                  if(chaine.length==3)
+               {
+                   
+               }
+                break;
+            case "RETRAIT":
+                  if(chaine.length==3)
+               {
+                   
+               }
+                break;
+            default:
               reponse="ERREUR REQUETE INCORRECTE";
-      
-      
-                  
-        return reponse;
     }
-    
+   
+      
+   
+       return reponse;
+}
+
+     public BanqueSimple getBanque(){
+           return banque;
+       }
 }
