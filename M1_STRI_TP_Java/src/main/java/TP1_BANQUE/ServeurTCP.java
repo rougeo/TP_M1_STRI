@@ -43,6 +43,8 @@ ServerSocket sockEcoute;                   // Déclaration du ServerSocket
                     System.out.println("Erreur de accept : " + ioe.getMessage()); 
                     break;                     
               } 
+              
+              /**************************/
               try{ 
               //  Instancie un BufferedReader travaillant sur un InputStreamReader lié à
               // l’input stream de la socket 
@@ -59,7 +61,9 @@ ServerSocket sockEcoute;                   // Déclaration du ServerSocket
               } 
                 catch(IOException ioe) { 
                       System.out.println("Erreur de lecture : " + ioe.getMessage()); 
-                } 
+                }
+              socketService.close();
+              /*******************/
               
         }
     }

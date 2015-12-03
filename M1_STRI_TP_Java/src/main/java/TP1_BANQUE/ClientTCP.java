@@ -43,12 +43,13 @@ public class ClientTCP {
 	        
         System.out.print ("\n Saisir une requete: ");
         requete = entreeClavier.readLine();   
-        while(requete.){
         
-	    fluxSortant.println(requete);
-	    System.out.println("REPONSE: \n" + fluxEntrant.readLine());
-	    System.out.print ("\n Saisir une requete: ");
-        requete = entreeClavier.readLine();   
+        while(!(requete.equals("FIN")){
+        
+		    fluxSortant.println(requete);
+		    System.out.println("REPONSE: \n" + fluxEntrant.readLine());
+		    System.out.print ("\n Saisir une requete: ");
+	        requete = entreeClavier.readLine();   
         }
         client.close();
     }
