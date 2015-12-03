@@ -14,13 +14,13 @@ import java.io.*;
  * @author BoubacarSidy
  */
 public class ClientTCP {
+    private Socket client = null;
+    private PrintStream fluxSortant = null;
+    private BufferedReader fluxEntrant = null;
     
     public ClientTCP(String NomServeur, int Numport){
         
         
-        Socket client = null;
-        PrintStream fluxSortant = null;
-        BufferedReader fluxEntrant = null;
 
         try {
             // echoSocket = new Socket("taranis", 7);
@@ -41,13 +41,15 @@ public class ClientTCP {
         String requete;
         BufferedReader entreeClavier = new BufferedReader(new InputStreamReader(System.in));
 	        
-        while(true){
-            System.out.print ("\n Saisir une requete: ");
-            requete = entreeClavier.readLine();
+        System.out.print ("\n Saisir une requete: ");
+        requete = entreeClavier.readLine();   
+        while(requete.){
+        
 	    fluxSortant.println(requete);
 	    System.out.println("REPONSE: \n" + fluxEntrant.readLine());
-           
-	}
+	    System.out.print ("\n Saisir une requete: ");
+        requete = entreeClavier.readLine();   
+        }
         client.close();
     }
 }
