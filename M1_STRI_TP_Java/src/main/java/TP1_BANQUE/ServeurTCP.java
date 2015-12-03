@@ -45,24 +45,8 @@ ServerSocket sockEcoute;                   // Déclaration du ServerSocket
               } 
               
               /**************************/
-              try{ 
-              //  Instancie un BufferedReader travaillant sur un InputStreamReader lié à
-              // l’input stream de la socket 
-              fluxEntre = new BufferedReader 
-                            (new InputStreamReader(sockService.getInputStream())); 
-              fluxSortant = new PrintStream(sockService.getOutputStream()); 
-              //  Lit une ligne de caractères depuix le flux, et donc la reçoit du client 
-
-              while((requete=fluxEntre.readLine())!=null)
-              {
-                 fluxSortant.println(gestion.traitement(requete));
-              
-              }
-              } 
-                catch(IOException ioe) { 
-                      System.out.println("Erreur de lecture : " + ioe.getMessage()); 
-                }
-              socketService.close();
+              Thread_TCP t=new Thread_TCP(sockService,gestion);
+            		  t.start();
               /*******************/
               
         }
